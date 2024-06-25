@@ -4,15 +4,15 @@ import WeatherData from './components/WeatherData';
 import SearchBar from './components/SearchBar';
 
 function App() {
-//setting up connection of API for data using useState
+  //setting up connection of API for data using useState
   const [data,setData] = useState({})
   const [location,setLocation] = useState('')
 
   const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
-// location is whats passed through in url. also changing metric from celsius to fahrenheit--&units=imperial 
+  // location is whats passed through in url. also changing metric from celsius to fahrenheit--&units=imperial 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=${API_KEY}`
 
-// connecting API through search function. If statement allows user to just hit enter on keyboard and it will search
+  // connecting API through search function. If statement allows user to just hit enter on keyboard and it will search
   const searchLocation = (event) => {
     if(event.key === 'Enter') {
       axios.get(url).then((response) => {
