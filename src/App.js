@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios' 
 import WeatherData from './components/WeatherData';
+import SearchBar from './components/SearchBar';
 
 function App() {
 //setting up connection of API for data using useState
@@ -23,22 +24,12 @@ function App() {
     }
   }
 
-//outlined classnames in container (top and bottom)
-//styled in index.css not app.css because it's small scale page
-//on Mac option+shift+8 to get Degree symbol(°)
-// added input which has the onChange code, placed before container
-// No click button for enter bu adding onKeyPress
   return (
     <div className="app">
-      <div className="search">
-        <input
-        value={location}
-        onChange={event => setLocation(event.target.value)}
-        onKeyPress={searchLocation}
-        placeholder= 'Enter Location'
-        type="text"/>
-      </div>
+      {/*SearchBar Component*/}
+      <SearchBar location={location} searchLocation={searchLocation} setLocation={setLocation}/>
 
+      {/*Container classNames (top and bottom) styles in index.css*/}
       <div className="container">
         {/*WeatherData Component*/}
         <WeatherData data = {data}/>
