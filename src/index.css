@@ -41,8 +41,7 @@ h1 {
   color: white; 
 }
 
-/* Styling for app background. Note: z-index controls the stacking order
-of overlapping elements on a page.no-repeat center center/cover moves and aligns when
+/* Styling for app background. Note: z-index controls the stacking order of overlapping elements on a page.no-repeat center center/cover moves and aligns when
 changing size of screen*/
 .app:before {
   content: '';
@@ -129,5 +128,4 @@ changing size of screen*/
   border-radius: 12px;
   background-color: rgba(255,255,255,0.2);
 }
-
 

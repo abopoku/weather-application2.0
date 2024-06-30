@@ -1,9 +1,21 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import axios from 'axios' 
 import WeatherData from './components/WeatherData';
 import SearchBar from './components/SearchBar';
 
 function App() {
+
+  // setting up connection of API for default location
+  useEffect(() => {
+    const fetchDefaultWeather = async () => {
+      const defaultLocation = 'Miami';
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${defaultLocation}&units=imperial&appid=${API_KEY}`;
+      const response = await fetch(url);
+      const defaultData = await response.json();
+      setData(defaultData);
+    }
+    fetchDefaultWeather();
+  }, [])
   //setting up connection of API for data using useState
   const [data,setData] = useState({})
   const [location,setLocation] = useState('')
