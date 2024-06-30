@@ -27,6 +27,11 @@ h1 {
   font-size: 6rem;
 }
 
+/* sets font weight of the page */
+.bold {
+  font-weight: 700;
+}
+
 /* the rgba is the overlay */
 .app {
   width: 100%;
@@ -36,7 +41,7 @@ h1 {
   color: white; 
 }
 
-/* inserted image we can change if needed. also z-index controls the stacking order
+/* Styling for app background. Note: z-index controls the stacking order
 of overlapping elements on a page.no-repeat center center/cover moves and aligns when
 changing size of screen*/
 .app:before {
@@ -56,19 +61,21 @@ changing size of screen*/
   padding: 1rem;
 }
 
+/* styling in search input bar */
 .app input {
   padding: .7rem 1.5rem;
   font-size: 1.2rem;
-  border-radius: 25px;
+  border-radius: 12px;
   border: 1px solid rgba(255,255,255,0.8);
-  background: rgba(255,255,255,0.1);
+  background: rgba(10, 0, 0, 0.312);
+  color: whitesmoke
 }
-
+/* Default font color in search input bar */
 ::placeholder {
   color:whitesmoke;
 }
 
-/* spacing the data displayed on screen */
+/* spacing the weather data displayed on screen */
 .container {
   max-width: 700px;
   height: 500px;
@@ -81,24 +88,33 @@ changing size of screen*/
   justify-content: space-between;
 }
 
-/* spacing the top part of how data would be displayed */
+/* Defines CSS Styling for selected/default location weather temp data*/
 .app .top {
-  width: 100%;
+  width:100%;
   margin: 1rem auto;
   text-align: center;
-  
 }
 
-/* Trying to figure out the best way to align this data visually??*/
+/* Defines CSS styling for weather condition description*/
 .app .description {
   position: relative;
+  color:whitesmoke;
+  margin-bottom: 1rem;
 }
 
+/* Defines CSS styling for temp high */
 .app .high {
+ position: relative;
+  color:whitesmoke;
+  margin-bottom: 1rem;
   
 }
 
+/* Defines CSS styling for temp low */
 .app .low {
+ position: relative;
+  color:whitesmoke;
+  margin-bottom: 1rem;
  
 }
 
@@ -114,6 +130,4 @@ changing size of screen*/
   background-color: rgba(255,255,255,0.2);
 }
 
-.bold {
-  font-weight: 700;
-}
+
